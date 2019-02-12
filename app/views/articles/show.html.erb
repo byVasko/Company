@@ -3,3 +3,26 @@
 <hr>
 <%= link_to "Edit", edit_article_path(@article), :class => 'btn btn-warning' %>
 <%= link_to "Delete", article_path(@article), method: :delete, data: {confirm: "Realy delete?"}, :class => 'btn btn-danger' %>
+<hr>
+<h2>All comments</h2>
+<% @article.comments.each do |comment| %>
+  <div class="alert alert-light">
+    <p><strong><%= comment.username %></strong>: <%= comment.body %></p>
+  </div>
+<% end %>
+<hr>
+<h2>Add comments</h2>
+<%= form_for([@article, @article.comments.build]) do |f| %>
+    <p>
+		User<br>
+		<%= f.text_field(:username, {:class => 'form-control'}) %>
+	</p>
+	<p>
+		Body<br>
+		<%= f.text_area(:body, {:class => 'form-control'}) %>
+	</p>
+
+	<p>
+		<%= f.submit("Add comment", {:class => 'btn btn-success'}) %>
+	</p>
+<% end %>
