@@ -6,9 +6,7 @@
 <hr>
 <h2>All comments</h2>
 <% @article.comments.each do |comment| %>
-  <div class="alert alert-light">
-    <p><strong><%= comment.username %></strong>: <%= comment.body %></p>
-  </div>
+  <p><strong><%= comment.username %></strong>: <%= comment.body %></p>  
 <% end %>
 <hr>
 <h2>Add comments</h2>
