@@ -1,1 +1,5 @@
-<h3>Home</h3>
+<h1>All news</h1>
+<% @article.each do |article| %>
+  <h3><%= article.title %></h3>
+  <p><%= article.body %></p>
+<% end %>
