@@ -1,5 +1,6 @@
 <div class="alert alert-light">
     <h3><%= article.title %></h3>
-    <p><%= article.body.html_safe %></p>
+    <p><%= image_tag article.image.url(:thumb), class: 'img-show' if article.image? %></p>
     <%= link_to "Read more", article_path(article), :class => 'btn btn-outline-primary' %>
+    <hr>
   </div>
