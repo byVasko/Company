@@ -13,6 +13,10 @@
 		Body<br>
 		<%= f.trix_editor(:body, {:class => 'editor'}) %>
 	</p>
+	<p>
+		All taggs<br>
+		<%= f.text_field(:all_tags, {:class => 'form-control'}) %>
+	</p>
 
 	<p>
 		<%= f.submit({:class => 'btn btn-success'}) %>
