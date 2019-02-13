@@ -1,0 +1,10 @@
+<h2><span class="btn btn-outline-primary"><%= link_to 'Add smartphone', new_smartphone_path %></span></h2>
+<h1>All smartphones</h1>
+<hr>
+<% @smartphone.each do |smartphone| %>
+  <div class="alert alert-light">
+    <p><%= image_tag smartphone.image.url(:thumb), class: 'img-show' if smartphone.image? %></p>
+  	<h3><%= link_to smartphone.title, smartphone_path(smartphone) %></h3>
+  </div>
+  <hr>
+<% end %>

@@ -1,5 +1,5 @@
 <h2>Edit news</h2>
-<%= form_for :article, url: article_path(@article), method: :patch do |f| %>
+<%= form_for :article, html: { multipart: true }, url: article_path(@article), method: :patch do |f| %>
     <% if @article.errors.any? %>
       <% @article.errors.full_messages.each do |msg| %>
         <div class="alert alert-danger"><%= msg %></div>
@@ -16,6 +16,10 @@
 	<p>
 		All taggs<br>
 		<%= f.text_field(:all_tags, {:class => 'form-control'}) %>
+	</p>
+	<p>
+		Image<br>
+		<%= f.file_field(:image, {:class => 'form-control'}) %>
 	</p>
 
 	<p>

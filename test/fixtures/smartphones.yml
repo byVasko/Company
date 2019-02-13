@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  display: MyString
+  processor: MyString
+  ram: MyString
+  rom: MyString
+  battery: MyString
+  os: MyString
+
+two:
+  title: MyString
+  display: MyString
+  processor: MyString
+  ram: MyString
+  rom: MyString
+  battery: MyString
+  os: MyString

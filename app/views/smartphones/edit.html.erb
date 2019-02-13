@@ -1,0 +1,43 @@
+<%= form_for :smartphone, html: { multipart: true }, url: smartphone_path(@smartphone), method: :patch do |f| %>
+    <% if @smartphone.errors.any? %>
+      <% @smartphone.errors.full_messages.each do |msg| %>
+        <div class="alert alert-danger"><%= msg %></div>
+      <% end %>
+    <% end %>
+    <p>
+		Image<br>
+		<%= f.file_field(:image, {:class => 'form-control'}) %>
+	</p>
+	<p>
+		Title<br>
+		<%= f.text_field(:title, {:class => 'form-control'}) %>
+	</p>
+	<p>
+		Display<br>
+		<%= f.text_field(:display, {:class => 'form-control'}) %>
+	</p>
+	<p>
+		Processor<br>
+		<%= f.text_field(:processor, {:class => 'form-control'}) %>
+	</p>
+	<p>
+		RAM<br>
+		<%= f.text_field(:ram, {:class => 'form-control'}) %>
+	</p>
+	<p>
+		ROM<br>
+		<%= f.text_field(:rom, {:class => 'form-control'}) %>
+	</p>
+	<p>
+		Battery<br>
+		<%= f.text_field(:battery, {:class => 'form-control'}) %>
+	</p>
+	<p>
+		OS<br>
+		<%= f.text_field(:os, {:class => 'form-control'}) %>
+	</p>
+
+	<p>
+		<%= f.submit({:class => 'btn btn-success'}) %>
+	</p>
+<% end %>
