@@ -6,9 +6,8 @@
 <hr>
 <h2>All comments</h2>
 <% @article.comments.each do |comment| %>
-  <div class="alert alert-light">
-    <p><strong><%= comment.username %></strong>: <%= comment.body %></p>
-  </div>
+  <p><strong><%= comment.username %></strong>: <%= comment.body %></p>
+  <p><%= link_to 'Delete Comment',  article_comment_path(comment.article, comment),   method: :delete, data: { confirm: "Realy delete?"}, :class => 'btn btn-danger' %></p>  
 <% end %>
 <hr>
 <h2>Add comments</h2>
