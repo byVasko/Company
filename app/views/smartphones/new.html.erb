@@ -1,0 +1,40 @@
+<h2>Add smartphones</h2>
+<%= form_for :smartphone, url: smartphones_path do |f| %>
+    <% if @smartphone.errors.any? %>
+      <% @smartphone.errors.full_messages.each do |msg| %>
+        <div class="alert alert-danger"><%= msg %></div>
+      <% end %>
+    <% end %>
+	<p>
+		Title<br>
+		<%= f.text_field(:title, {:class => 'form-control'}) %>
+	</p>
+	<p>
+		Display<br>
+		<%= f.text_field(:display, {:class => 'form-control'}) %>
+	</p>
+	<p>
+		Processor<br>
+		<%= f.text_field(:processor, {:class => 'form-control'}) %>
+	</p>
+	<p>
+		RAM<br>
+		<%= f.text_field(:ram, {:class => 'form-control'}) %>
+	</p>
+	<p>
+		ROM<br>
+		<%= f.text_field(:rom, {:class => 'form-control'}) %>
+	</p>
+	<p>
+		Battery<br>
+		<%= f.text_field(:battery, {:class => 'form-control'}) %>
+	</p>
+	<p>
+		OS<br>
+		<%= f.text_field(:os, {:class => 'form-control'}) %>
+	</p>
+
+	<p>
+		<%= f.submit({:class => 'btn btn-success'}) %>
+	</p>
+<% end %>

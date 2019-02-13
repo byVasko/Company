@@ -1,0 +1,11 @@
+<h1><%= @smartphone.title %></h1>
+<p><strong>Display : </strong><%= @smartphone.display %></p>
+<p><strong>Processor : </strong><%= @smartphone.processor %></p>
+<p><strong>RAM : </strong><%= @smartphone.ram %></p>
+<p><strong>ROM : </strong><%= @smartphone.rom %></p>
+<p><strong>Battery : </strong><%= @smartphone.battery %></p>
+<p><strong>OS : </strong><%= @smartphone.os %></p>
+<hr>
+<%= link_to "Edit", edit_smartphone_path(@smartphone), :class => 'btn btn-warning' %>
+<%= link_to "Delete", smartphone_path(@smartphone), method: :delete, data: {confirm: "Realy delete?"}, :class => 'btn btn-danger' %>
+<hr>

@@ -1,0 +1,15 @@
+<h2><span class="btn btn-outline-primary"><%= link_to 'Add smartphone', new_smartphone_path %></span></h2>
+<h1>All smartphones</h1>
+<hr>
+<% @smartphone.each do |smartphone| %>
+  <div class="alert alert-light">
+  	<h3><%= link_to smartphone.title, smartphone_path(smartphone) %></h3>
+    <p><strong>Display : </strong><%= smartphone.display %></p>
+    <p><strong>Processor : </strong><%= smartphone.processor %></p>
+    <p><strong>RAM : </strong><%= smartphone.ram %></p>
+    <p><strong>ROM : </strong><%= smartphone.rom %></p>
+    <p><strong>Battery : </strong><%= smartphone.battery %></p>
+    <p><strong>OS : </strong><%= smartphone.os %></p>
+  </div>
+  <hr>
+<% end %>
