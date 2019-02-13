@@ -8,3 +8,4 @@
   <%= raw article.tags.map(&:name).map{ |t| link_to t, tag_path(t), class: 'badge badge-primary' }.join(' ') %>
   <hr>
 <% end %>
+<%= will_paginate @article %>
