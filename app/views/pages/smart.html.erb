@@ -3,13 +3,8 @@
 <hr>
 <% @smartphone.each do |smartphone| %>
   <div class="alert alert-light">
+    <p><%= image_tag smartphone.image.url(:thumb), class: 'img-show' if smartphone.image? %></p>
   	<h3><%= link_to smartphone.title, smartphone_path(smartphone) %></h3>
-    <p><strong>Display : </strong><%= smartphone.display %></p>
-    <p><strong>Processor : </strong><%= smartphone.processor %></p>
-    <p><strong>RAM : </strong><%= smartphone.ram %></p>
-    <p><strong>ROM : </strong><%= smartphone.rom %></p>
-    <p><strong>Battery : </strong><%= smartphone.battery %></p>
-    <p><strong>OS : </strong><%= smartphone.os %></p>
   </div>
   <hr>
 <% end %>

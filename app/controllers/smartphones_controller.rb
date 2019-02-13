@@ -35,10 +35,10 @@ class SmartphonesController < ApplicationController
 	def destroy
 		@smartphone = Smartphone.find(params[:id])
 		@smartphone.destroy
-		redirect_to root_path
+		redirect_to smart_path
 	end
 
 	private def smartphone_params
-		params.require(:smartphone).permit(:title, :display, :processor, :ram, :rom, :battery, :os)
+		params.require(:smartphone).permit(:title, :display, :processor, :ram, :rom, :battery, :os, :image)
 	end
 end

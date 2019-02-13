@@ -1,4 +1,5 @@
 <h1><%= @smartphone.title %></h1>
+<p><%= image_tag @smartphone.image.url(:large), class: 'img-show' if @smartphone.image? %></p>
 <p><strong>Display : </strong><%= @smartphone.display %></p>
 <p><strong>Processor : </strong><%= @smartphone.processor %></p>
 <p><strong>RAM : </strong><%= @smartphone.ram %></p>
