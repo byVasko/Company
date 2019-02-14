@@ -10,19 +10,22 @@
   </head>
 
   <body>
-  
-  <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+  <h5 class="my-0 mr-md-auto font-weight-bold">Company name</h5>
+  <nav class="my-2 my-md-0 mr-md-3">
+    <span class="p-2 text-dark"><%= link_to 'Home', root_path %></span>
+    <span class="p-2 text-dark"><%= link_to 'List of smartphones', smart_path %></span>
+    <span class="p-2 text-dark"><%= link_to 'About company', about_path %></span>
+    <span class="p-2 text-dark"><%= link_to 'Add news', new_article_path %></span>
+  </nav>
+  <% if user_signed_in? %>
+  <span class="btn btn-outline-primary"><%= link_to 'Logout', destroy_user_session_path, method: :delete %></span>
+  <% else %>
+  <span class="btn btn-outline-primary"><%= link_to 'Sign in', new_user_session_path %></span>
+  <% end%>
+</div>
 
-  
-    <% if user_signed_in? %>
-   <%= link_to "Home", root_path %> |
-   <%= link_to "Logout",  destroy_user_session_path, method: :delete %>
-   <% else %>
-   <%= link_to "Login", new_user_session_path %> |
-   <%= link_to "Sign up", new_user_registration_path %>
-
-<% end %>
+<div class="container">
     <%= yield %>
 </div>
   </body>
